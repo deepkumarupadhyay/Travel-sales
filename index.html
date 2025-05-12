@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YourBrand - The Ultimate Solution</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --primary-dark: #16459b;
+      --secondary: #ffd166;
+      --accent: #ff6f61;
+      --background: #f8fafd;
+      --card-bg: #fff;
+      --gray: #55596e;
+      --radius: 18px;
+      --shadow: 0 2px 16px rgba(36,42,86,0.1);
+    }
+    html, body {
+      background: var(--background);
+      color: var(--gray);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    body {
+      max-width: 375px;
+      min-height: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 32px rgba(36,42,86,0.12);
+      border-radius: var(--radius);
+      background: linear-gradient(120deg, #e0e7ff 0%, #f8fafd 100%);
+      position: relative;
+    }
+    header {
+      border-radius: var(--radius) var(--radius) 0 0;
+      background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.2em 1em 1.2em 1em;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+    header .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 0.2em 0 0.2em 0;
+      font-size: 2em;
+      letter-spacing: -1px;
+      font-weight: 700;
+    }
+    header .hero-img {
+      width: 100%;
+      max-width: 270px;
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      margin-top: 15px;
+      box-shadow: 0 2px 18px rgba(36,42,86,0.18);
+      border: 3px solid rgba(255,255,255,0.18);
+    }
+    header p {
+      font-size: 1.02em;
+      font-weight: 400;
+      margin: 10px 0 0;
+    }
+    .cta-btn {
+      margin-top: 18px;
+      background: var(--secondary);
+      color: var(--primary-dark);
+      border: none;
+      font-weight: 700;
+      padding: 1em 2.5em;
+      border-radius: var(--radius);
+      font-size: 1.07em;
+      box-shadow: 0 3px 12px rgba(252,209,60,.11);
+      cursor: pointer;
+      transition: background .18s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .cta-btn:hover { background: #ffe49a; }
+    .benefits-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 1.5em 1.2em;
+      padding: 1.4em 1em 1.1em 1em;
+    }
+    .benefits-section h2 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 1.17em;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+    }
+    .benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: .5em 0 0 0;
+    }
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.1em;
+      font-size: 1em;
+    }
+    .benefits-list svg {
+      margin-right: 10px;
+      min-width: 22px;
+    }
+    .trust-signals {
+      margin: 0.8em 0 0.2em 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .trust-signals img {
+      height: 26px;
+      width: auto;
+      mix-blend-mode: multiply;
+      opacity: 0.87;
+    }
+    .testimonials-section {
+      margin: 1.2em 0;
+      padding: 1.3em 1.2em;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .testimonials-section h2 {
+      color: var(--primary-dark);
+      font-size: 1.05em;
+      margin: 0 0 0.65em 0;
+    }
+    .testimonial {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 1em;
+    }
+    .testimonial:last-child { margin-bottom: 0; }
+    .testimonial img {
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+      margin-top: 2px;
+    }
+    .testimonial-body {
+      background: #f5f7fa;
+      border-radius: 10px;
+      padding: .7em .9em;
+      box-shadow: 0 2px 4px rgba(80,103,181,.06);
+      font-size: .98em;
+      flex: 1;
+    }
+    .testimonial .name {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .testimonial .stars {
+      color: #ffc83d;
+      font-size: 0.88em;
+      margin-left: 2px;
+      letter-spacing: .10em;
+    }
+    .lead-form-section {
+      margin: 1.3em 1em;
+      padding: 1.5em 1em 2em 1em;
+      background: linear-gradient(106deg, var(--primary) 78%, var(--secondary) 120%);
+      color: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .lead-form-section h2 {
+      margin-top: 0;
+      font-size: 1.13em;
+      letter-spacing: -0.5px;
+      font-weight: 700;
+    }
+    .lead-form-section form {
+      margin-top: .7em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65em;
+      align-items: center;
+    }
+    .lead-form-section input[type="text"],
+    .lead-form-section input[type="email"] {
+      padding: .85em 1em;
+      border-radius: 8px;
+      border: none;
+      width: 92%;
+      max-width: 260px;
+      font-size: .97em;
+      outline: none;
+      margin-bottom: .5em;
+    }
+    .lead-form-section button {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      border: none;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: .82em 2em;
+      cursor: pointer;
+      font-size: 1.0em;
+      transition: background .14s;
+    }
+    .lead-form-section button:hover { background: #ffe49a; }
+    .cross-sell-section {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      margin: 1.2em 1em;
+      padding: 1.1em 1.1em .6em 1.1em;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .cross-sell-section h2 {
+      color: var(--primary-dark);
+      font-size: 1.03em;
+      margin: .3em 0 1em 0;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .cross-sells {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cross-sell-card {
+      background: #fafbff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(70,117,220,0.06);
+      width: 108px;
+      padding: 0.7em 0.6em 1.06em;
+      transition: box-shadow .15s;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cross-sell-card img {
+      border-radius: 7px;
+      width: 88px;
+      height: 56px;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+    .cross-sell-card .name {
+      font-size: 0.98em;
+      font-weight: 700;
+      color: var(--gray);
+      margin-bottom: 2px;
+    }
+    .cross-sell-card .hint {
+      font-size: .83em;
+      color: #8592ad;
+      margin-bottom: 5px;
+    }
+    .cross-sell-card a {
+      padding: .64em 1.13em;
+      margin-top: 4px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 6px;
+      font-size: .95em;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background .14s;
+    }
+    .cross-sell-card a:hover {
+      background: var(--accent);
+    }
+    footer {
+      margin: 1.4em 0 .5em 0;
+      text-align: center;
+      color: #8487a0;
+      font-size: .96em;
+      letter-spacing: .06em;
+      padding-bottom: .7em;
+    }
+    @media (max-width: 400px) {
+      body { max-width: 98vw; }
+      header .hero-img { max-width: 95vw; }
+      .benefits-section, .testimonials-section,
+      .lead-form-section, .cross-sell-section {
+        margin: 1.15em 0.3em !important;
+        padding-left: 0.35em !important;
+        padding-right: 0.35em !important;
+      }
+      .cross-sell-card { width: 90px; padding-left: 0.3em; padding-right: 0.3em;}
+      .cross-sell-card img { width: 80px; height: 50px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / HERO -->
+  <header>
+    <img class="logo" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=facearea&w=128&q=80" alt="Brand Logo">
+    <h1>YourBrand: Unlock Your Potential</h1>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+         alt="Product Hero">
+    <p>Experience the next level of effectiveness. Our solution gives you the tools and confidence to achieve more—every day.</p>
+    <a href="#signup" class="cta-btn">Try It Now</a>
+  </header>
+  <!-- BENEFITS & TRUST SIGNALS -->
+  <section class="benefits-section">
+    <h2>Why Choose Us?</h2>
+    <ul class="benefits-list">
+      <li>
+        <svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="11" fill="#ffd166"/><path d="M8.5 12.2l2.5 2.3 4-5.2" stroke="#4361ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Proven Performance: Real improvements in productivity and satisfaction.
+      </li>
+      <li>
+        <svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="11" fill="#ffd166"/><path d="M8.5 12.2l2.5 2.3 4-5.2" stroke="#4361ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Easy to Use: Intuitive design, get results from day one!
+      </li>
+      <li>
+        <svg width="24" height="24" fill="none"><circle cx="12" cy="12" r="11" fill="#ffd166"/><path d="M8.5 12.2l2.5 2.3 4-5.2" stroke="#4361ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Dedicated Support: Our caring team is here for you—always.
+      </li>
+    </ul>
+    <div class="trust-signals" aria-label="Our guarantees">
+      <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" title="Money Back Guarantee" alt="30-day money back">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828648.png" title="Secure Payment" alt="Secure payment">
+      <img src="https://cdn-icons-png.flaticon.com/512/2271/2271075.png" title="24/7 Customer Support" alt="Support">
+    </div>
+  </section>
+  <!-- TESTIMONIALS / SOCIAL PROOF -->
+  <section class="testimonials-section">
+    <h2>Join 10,000+ Happy Customers</h2>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/64.jpg" alt="Lucy Adams">
+      <div class="testimonial-body">
+        <div class="name">Lucy Adams <span class="stars">★★★★★</span></div>
+        <div>“YourBrand made my daily routine so much easier—I've recommended it to all my friends!”</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Mark Leon">
+      <div class="testimonial-body">
+        <div class="name">Mark Leon <span class="stars">★★★★½</span></div>
+        <div>“Impressive support and the product does exactly what it promises. I can't imagine my workflow without it!”</div>
+      </div>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Cheung">
+      <div class="testimonial-body">
+        <div class="name">Emma Cheung <span class="stars">★★★★★</span></div>
+        <div>“Trustworthy and powerful. The best investment I've made in years!”</div>
+      </div>
+    </div>
+  </section>
+  <!-- LEAD CAPTURE FORM -->
+  <section class="lead-form-section" id="signup">
+    <h2>Unlock Exclusive Access</h2>
+    <div>Enter your details to try YourBrand for free plus receive our actionable productivity checklist!</div>
+    <form id="lead-capture-form" autocomplete="on">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit">Get Started</button>
+      <div id="form-success" style="display:none; color: #ffd166; margin-top: 12px;font-size:1.01em;font-weight:700;">Thank you! We'll be in touch soon.</div>
+    </form>
+    <script>
+      // Simple client-side mock for demo form submit
+      document.getElementById('lead-capture-form').onsubmit = function(e){
+        e.preventDefault();
+        document.getElementById('form-success').style.display = '';
+        setTimeout(() => {
+          document.getElementById('form-success').style.display = 'none';
+          document.getElementById('lead-capture-form').reset();
+        }, 3000);
+      }
+    </script>
+  </section>
+  <!-- CROSS-SELL / RELATED PRODUCTS -->
+  <section class="cross-sell-section">
+    <h2>You Might Also Like</h2>
+    <div class="cross-sells">
+      <div class="cross-sell-card">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=250&q=80" alt="Premium Accessory 1" />
+        <div class="name">Productivity Journal</div>
+        <div class="hint">Boost focus</div>
+        <a href="#" onclick="alert('Add-on purchased!')">Buy Now</a>
+      </div>
+      <div class="cross-sell-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=250&q=80" alt="Premium Accessory 2"/>
+        <div class="name">Guided Audio Course</div>
+        <div class="hint">Learn on the go</div>
+        <a href="#" onclick="alert('Add-on purchased!')">Buy Now</a>
+      </div>
+      <div class="cross-sell-card">
+        <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=250&q=80" alt="Premium Accessory 3"/>
+        <div class="name">Desk Organizer Kit</div>
+        <div class="hint">Declutter fast</div>
+        <a href="#" onclick="alert('Add-on purchased!')">Buy Now</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    &copy; 2024 YourBrand &middot; Crafted for your success.<br>
+    <span>
+      <a href="#" style="color:#4361ee;text-decoration:none;">Privacy</a> •
+      <a href="#" style="color:#4361ee;text-decoration:none;">Contact</a>
+    </span>
+  </footer>
+</body>
+</html>
+
